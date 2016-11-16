@@ -185,16 +185,15 @@ public class MyMainTest {
         String args[] = {"-i", "is", "are", "--", inputFile1.getPath()};
         Main.main(args);
 
-        String expected = "Testing File :\n" +
+        String expected1 = "Testing File :\n" +
                 "Replace utility are used to test a file with replace options\n" +
                 "now let's test it!!!\n" +
                 "thare file has a bunch of codes...\n" +
                 "We all know that \"Replace Utility\" are awesome!!";
 
-        Main testClass = new Main();
-        String actual = getFileContent(inputFile1.getPath());
-        assertEquals("The files match!", expected, actual);
-        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + "_backUP")));
+        String actual1 = getFileContent(inputFile1.getPath());
+        assertEquals("The files match!", expected1, actual1);
+        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + ".bck")));
     }
 
 
@@ -223,15 +222,15 @@ public class MyMainTest {
         String args[] = {"-l", "is", "!@#$", "--", inputFile1.getPath()};
         Main.main(args);
 
-        String expected = "Testing File :\n" +
+        String expected1 = "Testing File :\n" +
                 "Replace utility is used to test a file with replace options\n" +
                 "now let's test it!!!\n" +
                 "this file has a bunch of codes...\n" +
                 "We all know that \"Replace Utility\" !@#$ awesome!!";
 
         String actual1 = getFileContent(inputFile1.getPath());
-        assertEquals("The files match!",  expected, actual1);
-        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + "_backUP")));
+        assertEquals("The files match!", expected1, actual1);
+        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + ".bck")));
     }
 
 
@@ -268,18 +267,15 @@ public class MyMainTest {
                 "now let's test it!!!\n" +
                 "this file has a bunch of codes...\n" +
                 "We all know that \"Replace Utility\" is awesome!!");*/
-        String expected = "Testing File :\n" +
+        String expected1 = "Testing File :\n" +
                 "Replace utility is used to test a file with replace options\n" +
                 "now let's test itOOOO!\n" +
                 "this file has a bunch of codes...\n" +
                 "We all know that \"Replace Utility\" is awesome!!";
-
-        //Main testClass = new Main();
-        //assertEquals("The files match!", Main.main(args), expected);
-
+        
         String actual1 = getFileContent(inputFile1.getPath());
-        assertEquals("The files match!",  expected, actual1);
-        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + "_backUP")));
+        assertEquals("The files match!", expected1, actual1);
+        assertFalse(Files.exists(Paths.get(inputFile1.getPath() + ".bck")));
     }
 
 
